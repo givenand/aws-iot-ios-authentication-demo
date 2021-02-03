@@ -1,0 +1,752 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4BA238E361308FA3CC74B7D0 /* Pods_aws_iot_ios_authentication_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D583BB023619FAD1B545B37D /* Pods_aws_iot_ios_authentication_demo.framework */; };
+		BD09A40F4D14E906EB7FB08F /* Pods_aws_iot_ios_authentication_demo_aws_iot_ios_authentication_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BBAC839DC56ED4A925CCC3 /* Pods_aws_iot_ios_authentication_demo_aws_iot_ios_authentication_demoUITests.framework */; };
+		DA695E0825CAEAC1009B03B0 /* private.pem in Resources */ = {isa = PBXBuildFile; fileRef = DA695E0625CAEAC1009B03B0 /* private.pem */; };
+		DA97B42825B9BFC800207EF7 /* cms_mobility_demoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA97B42725B9BFC800207EF7 /* cms_mobility_demoApp.swift */; };
+		DA97B42A25B9BFC800207EF7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA97B42925B9BFC800207EF7 /* ContentView.swift */; };
+		DA97B42C25B9BFCB00207EF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA97B42B25B9BFCB00207EF7 /* Assets.xcassets */; };
+		DA97B42F25B9BFCB00207EF7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA97B42E25B9BFCB00207EF7 /* Preview Assets.xcassets */; };
+		DA97B43A25B9BFCB00207EF7 /* cms_mobility_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA97B43925B9BFCB00207EF7 /* cms_mobility_demoTests.swift */; };
+		DA97B44525B9BFCB00207EF7 /* cms_mobility_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA97B44425B9BFCB00207EF7 /* cms_mobility_demoUITests.swift */; };
+		DACEF5DB25B9F9AC00541044 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACEF5DA25B9F9AC00541044 /* constants.swift */; };
+		DACEF5E325BA19A800541044 /* connectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACEF5E225BA19A800541044 /* connectionHandler.swift */; };
+		DACEF5FA25C1F03300541044 /* awsiot-identity.p12 in Resources */ = {isa = PBXBuildFile; fileRef = DACEF5F925C1F03100541044 /* awsiot-identity.p12 */; };
+		F5786D7C5C3F1E64341C802E /* Pods_aws_iot_ios_authentication_demoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E69FE3442A98AD868CA7DF7 /* Pods_aws_iot_ios_authentication_demoTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA97B43625B9BFCB00207EF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA97B41C25B9BFC700207EF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA97B42325B9BFC700207EF7;
+			remoteInfo = "cms-mobility-demo";
+		};
+		DA97B44125B9BFCB00207EF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA97B41C25B9BFC700207EF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA97B42325B9BFC700207EF7;
+			remoteInfo = "cms-mobility-demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2233504E8A73F3947DF175B1 /* Pods-aws-iot-ios-authentication-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aws-iot-ios-authentication-demo.release.xcconfig"; path = "Target Support Files/Pods-aws-iot-ios-authentication-demo/Pods-aws-iot-ios-authentication-demo.release.xcconfig"; sourceTree = "<group>"; };
+		25C7CC5CA4C0F9FB7D711411 /* Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests.release.xcconfig"; path = "Target Support Files/Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests/Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2E69FE3442A98AD868CA7DF7 /* Pods_aws_iot_ios_authentication_demoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aws_iot_ios_authentication_demoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D96C17B2F6D5CDFBF6CDC8D /* Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests.debug.xcconfig"; path = "Target Support Files/Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests/Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A0D2D8D381A80AC626C0C5FC /* Pods-aws-iot-ios-authentication-demoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aws-iot-ios-authentication-demoTests.debug.xcconfig"; path = "Target Support Files/Pods-aws-iot-ios-authentication-demoTests/Pods-aws-iot-ios-authentication-demoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D583BB023619FAD1B545B37D /* Pods_aws_iot_ios_authentication_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aws_iot_ios_authentication_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA695E0625CAEAC1009B03B0 /* private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = private.pem; path = ../../../../Downloads/private.pem; sourceTree = "<group>"; };
+		DA97B42425B9BFC800207EF7 /* aws-iot-ios-authentication-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aws-iot-ios-authentication-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA97B42725B9BFC800207EF7 /* cms_mobility_demoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cms_mobility_demoApp.swift; sourceTree = "<group>"; };
+		DA97B42925B9BFC800207EF7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DA97B42B25B9BFCB00207EF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA97B42E25B9BFCB00207EF7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DA97B43025B9BFCB00207EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA97B43525B9BFCB00207EF7 /* aws-iot-ios-authentication-demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "aws-iot-ios-authentication-demoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA97B43925B9BFCB00207EF7 /* cms_mobility_demoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cms_mobility_demoTests.swift; sourceTree = "<group>"; };
+		DA97B43B25B9BFCB00207EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA97B44025B9BFCB00207EF7 /* aws-iot-ios-authentication-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "aws-iot-ios-authentication-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA97B44425B9BFCB00207EF7 /* cms_mobility_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cms_mobility_demoUITests.swift; sourceTree = "<group>"; };
+		DA97B44625B9BFCB00207EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA97B45525B9C4D700207EF7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DACEF5DA25B9F9AC00541044 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		DACEF5E225BA19A800541044 /* connectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = connectionHandler.swift; sourceTree = "<group>"; };
+		DACEF5F925C1F03100541044 /* awsiot-identity.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "awsiot-identity.p12"; path = "../../../../Downloads/awsiot-identity.p12"; sourceTree = "<group>"; };
+		E1BBAC839DC56ED4A925CCC3 /* Pods_aws_iot_ios_authentication_demo_aws_iot_ios_authentication_demoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aws_iot_ios_authentication_demo_aws_iot_ios_authentication_demoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF117CD992DC05788A2690C0 /* Pods-aws-iot-ios-authentication-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aws-iot-ios-authentication-demo.debug.xcconfig"; path = "Target Support Files/Pods-aws-iot-ios-authentication-demo/Pods-aws-iot-ios-authentication-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		F62C627C6AD204A4FDC45DCC /* Pods-aws-iot-ios-authentication-demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aws-iot-ios-authentication-demoTests.release.xcconfig"; path = "Target Support Files/Pods-aws-iot-ios-authentication-demoTests/Pods-aws-iot-ios-authentication-demoTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA97B42125B9BFC700207EF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BA238E361308FA3CC74B7D0 /* Pods_aws_iot_ios_authentication_demo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA97B43225B9BFCB00207EF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5786D7C5C3F1E64341C802E /* Pods_aws_iot_ios_authentication_demoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA97B43D25B9BFCB00207EF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD09A40F4D14E906EB7FB08F /* Pods_aws_iot_ios_authentication_demo_aws_iot_ios_authentication_demoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84E9A5D9BA791E8DB3F6301C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF117CD992DC05788A2690C0 /* Pods-aws-iot-ios-authentication-demo.debug.xcconfig */,
+				2233504E8A73F3947DF175B1 /* Pods-aws-iot-ios-authentication-demo.release.xcconfig */,
+				9D96C17B2F6D5CDFBF6CDC8D /* Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests.debug.xcconfig */,
+				25C7CC5CA4C0F9FB7D711411 /* Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests.release.xcconfig */,
+				A0D2D8D381A80AC626C0C5FC /* Pods-aws-iot-ios-authentication-demoTests.debug.xcconfig */,
+				F62C627C6AD204A4FDC45DCC /* Pods-aws-iot-ios-authentication-demoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DA97B41B25B9BFC700207EF7 = {
+			isa = PBXGroup;
+			children = (
+				DA97B42625B9BFC800207EF7 /* aws-iot-ios-authentication-demo */,
+				DA97B43825B9BFCB00207EF7 /* aws-iot-ios-authentication-demoTests */,
+				DA97B44325B9BFCB00207EF7 /* cms-mobility-demoUITests */,
+				DA97B42525B9BFC800207EF7 /* Products */,
+				84E9A5D9BA791E8DB3F6301C /* Pods */,
+				EA6B432CD27D21CCA23A0C8D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DA97B42525B9BFC800207EF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA97B42425B9BFC800207EF7 /* aws-iot-ios-authentication-demo.app */,
+				DA97B43525B9BFCB00207EF7 /* aws-iot-ios-authentication-demoTests.xctest */,
+				DA97B44025B9BFCB00207EF7 /* aws-iot-ios-authentication-demoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA97B42625B9BFC800207EF7 /* aws-iot-ios-authentication-demo */ = {
+			isa = PBXGroup;
+			children = (
+				DA695E0625CAEAC1009B03B0 /* private.pem */,
+				DACEF5F925C1F03100541044 /* awsiot-identity.p12 */,
+				DA97B42725B9BFC800207EF7 /* cms_mobility_demoApp.swift */,
+				DA97B42925B9BFC800207EF7 /* ContentView.swift */,
+				DA97B42B25B9BFCB00207EF7 /* Assets.xcassets */,
+				DA97B43025B9BFCB00207EF7 /* Info.plist */,
+				DA97B42D25B9BFCB00207EF7 /* Preview Content */,
+				DA97B45525B9C4D700207EF7 /* README.md */,
+				DACEF5DA25B9F9AC00541044 /* constants.swift */,
+				DACEF5E225BA19A800541044 /* connectionHandler.swift */,
+			);
+			path = "aws-iot-ios-authentication-demo";
+			sourceTree = "<group>";
+		};
+		DA97B42D25B9BFCB00207EF7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DA97B42E25B9BFCB00207EF7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DA97B43825B9BFCB00207EF7 /* aws-iot-ios-authentication-demoTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA97B43925B9BFCB00207EF7 /* cms_mobility_demoTests.swift */,
+				DA97B43B25B9BFCB00207EF7 /* Info.plist */,
+			);
+			name = "aws-iot-ios-authentication-demoTests";
+			sourceTree = "<group>";
+		};
+		DA97B44325B9BFCB00207EF7 /* cms-mobility-demoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DA97B44425B9BFCB00207EF7 /* cms_mobility_demoUITests.swift */,
+				DA97B44625B9BFCB00207EF7 /* Info.plist */,
+			);
+			name = "cms-mobility-demoUITests";
+			sourceTree = "<group>";
+		};
+		EA6B432CD27D21CCA23A0C8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D583BB023619FAD1B545B37D /* Pods_aws_iot_ios_authentication_demo.framework */,
+				E1BBAC839DC56ED4A925CCC3 /* Pods_aws_iot_ios_authentication_demo_aws_iot_ios_authentication_demoUITests.framework */,
+				2E69FE3442A98AD868CA7DF7 /* Pods_aws_iot_ios_authentication_demoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA97B42325B9BFC700207EF7 /* aws-iot-ios-authentication-demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA97B44925B9BFCB00207EF7 /* Build configuration list for PBXNativeTarget "aws-iot-ios-authentication-demo" */;
+			buildPhases = (
+				74ED94FAF46E3E19380CDD84 /* [CP] Check Pods Manifest.lock */,
+				DA97B42025B9BFC700207EF7 /* Sources */,
+				DA97B42125B9BFC700207EF7 /* Frameworks */,
+				DA97B42225B9BFC700207EF7 /* Resources */,
+				14B1AEDE19990DF5AD4D6AC2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "aws-iot-ios-authentication-demo";
+			productName = "cms-mobility-demo";
+			productReference = DA97B42425B9BFC800207EF7 /* aws-iot-ios-authentication-demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA97B43425B9BFCB00207EF7 /* aws-iot-ios-authentication-demoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA97B44C25B9BFCB00207EF7 /* Build configuration list for PBXNativeTarget "aws-iot-ios-authentication-demoTests" */;
+			buildPhases = (
+				FF6CAF1A4C2471DFDC3B629A /* [CP] Check Pods Manifest.lock */,
+				DA97B43125B9BFCB00207EF7 /* Sources */,
+				DA97B43225B9BFCB00207EF7 /* Frameworks */,
+				DA97B43325B9BFCB00207EF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA97B43725B9BFCB00207EF7 /* PBXTargetDependency */,
+			);
+			name = "aws-iot-ios-authentication-demoTests";
+			productName = "cms-mobility-demoTests";
+			productReference = DA97B43525B9BFCB00207EF7 /* aws-iot-ios-authentication-demoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DA97B43F25B9BFCB00207EF7 /* aws-iot-ios-authentication-demoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA97B44F25B9BFCB00207EF7 /* Build configuration list for PBXNativeTarget "aws-iot-ios-authentication-demoUITests" */;
+			buildPhases = (
+				C9120643F04C427838D1854E /* [CP] Check Pods Manifest.lock */,
+				DA97B43C25B9BFCB00207EF7 /* Sources */,
+				DA97B43D25B9BFCB00207EF7 /* Frameworks */,
+				DA97B43E25B9BFCB00207EF7 /* Resources */,
+				D72AE0C0974FF0F434182286 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA97B44225B9BFCB00207EF7 /* PBXTargetDependency */,
+			);
+			name = "aws-iot-ios-authentication-demoUITests";
+			productName = "cms-mobility-demoUITests";
+			productReference = DA97B44025B9BFCB00207EF7 /* aws-iot-ios-authentication-demoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA97B41C25B9BFC700207EF7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					DA97B42325B9BFC700207EF7 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					DA97B43425B9BFCB00207EF7 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = DA97B42325B9BFC700207EF7;
+					};
+					DA97B43F25B9BFCB00207EF7 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = DA97B42325B9BFC700207EF7;
+					};
+				};
+			};
+			buildConfigurationList = DA97B41F25B9BFC700207EF7 /* Build configuration list for PBXProject "aws-iot-ios-authentication-demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA97B41B25B9BFC700207EF7;
+			productRefGroup = DA97B42525B9BFC800207EF7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA97B42325B9BFC700207EF7 /* aws-iot-ios-authentication-demo */,
+				DA97B43425B9BFCB00207EF7 /* aws-iot-ios-authentication-demoTests */,
+				DA97B43F25B9BFCB00207EF7 /* aws-iot-ios-authentication-demoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA97B42225B9BFC700207EF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA97B42F25B9BFCB00207EF7 /* Preview Assets.xcassets in Resources */,
+				DA97B42C25B9BFCB00207EF7 /* Assets.xcassets in Resources */,
+				DA695E0825CAEAC1009B03B0 /* private.pem in Resources */,
+				DACEF5FA25C1F03300541044 /* awsiot-identity.p12 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA97B43325B9BFCB00207EF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA97B43E25B9BFCB00207EF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14B1AEDE19990DF5AD4D6AC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-aws-iot-ios-authentication-demo/Pods-aws-iot-ios-authentication-demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-aws-iot-ios-authentication-demo/Pods-aws-iot-ios-authentication-demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-aws-iot-ios-authentication-demo/Pods-aws-iot-ios-authentication-demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74ED94FAF46E3E19380CDD84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-aws-iot-ios-authentication-demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9120643F04C427838D1854E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D72AE0C0974FF0F434182286 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests/Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests/Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests/Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF6CAF1A4C2471DFDC3B629A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-aws-iot-ios-authentication-demoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA97B42025B9BFC700207EF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DACEF5E325BA19A800541044 /* connectionHandler.swift in Sources */,
+				DA97B42A25B9BFC800207EF7 /* ContentView.swift in Sources */,
+				DA97B42825B9BFC800207EF7 /* cms_mobility_demoApp.swift in Sources */,
+				DACEF5DB25B9F9AC00541044 /* constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA97B43125B9BFCB00207EF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA97B43A25B9BFCB00207EF7 /* cms_mobility_demoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA97B43C25B9BFCB00207EF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA97B44525B9BFCB00207EF7 /* cms_mobility_demoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA97B43725B9BFCB00207EF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA97B42325B9BFC700207EF7 /* aws-iot-ios-authentication-demo */;
+			targetProxy = DA97B43625B9BFCB00207EF7 /* PBXContainerItemProxy */;
+		};
+		DA97B44225B9BFCB00207EF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA97B42325B9BFC700207EF7 /* aws-iot-ios-authentication-demo */;
+			targetProxy = DA97B44125B9BFCB00207EF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DA97B44725B9BFCB00207EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DA97B44825B9BFCB00207EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA97B44A25B9BFCB00207EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF117CD992DC05788A2690C0 /* Pods-aws-iot-ios-authentication-demo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = HKXV82494L;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "aws-iot-ios-authentication-demo/Info.plist";
+				"INFOPLIST_FILE[sdk=*]" = "aws-iot-ios-authentication-demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "aws.iot-ios-authentication-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DA97B44B25B9BFCB00207EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2233504E8A73F3947DF175B1 /* Pods-aws-iot-ios-authentication-demo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = HKXV82494L;
+				ENABLE_PREVIEWS = YES;
+				"INFOPLIST_FILE[sdk=*]" = "aws-iot-ios-authentication-demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "aws.iot-ios-authentication-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		DA97B44D25B9BFCB00207EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0D2D8D381A80AC626C0C5FC /* Pods-aws-iot-ios-authentication-demoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "aws-iot-authentication-demoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "aws-iot-authentication-demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aws-iot-ios-authentication-demo.app/aws-iot-ios-authentication-demo";
+			};
+			name = Debug;
+		};
+		DA97B44E25B9BFCB00207EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F62C627C6AD204A4FDC45DCC /* Pods-aws-iot-ios-authentication-demoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "aws-iot-authentication-demoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "aws-iot-authentication-demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aws-iot-ios-authentication-demo.app/aws-iot-ios-authentication-demo";
+			};
+			name = Release;
+		};
+		DA97B45025B9BFCB00207EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D96C17B2F6D5CDFBF6CDC8D /* Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "aws-iot-authentication-demoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "aws-iot-authentication-demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "cms-mobility-demo";
+			};
+			name = Debug;
+		};
+		DA97B45125B9BFCB00207EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25C7CC5CA4C0F9FB7D711411 /* Pods-aws-iot-ios-authentication-demo-aws-iot-ios-authentication-demoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "aws-iot-authentication-demoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "aws-iot-authentication-demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "cms-mobility-demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA97B41F25B9BFC700207EF7 /* Build configuration list for PBXProject "aws-iot-ios-authentication-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA97B44725B9BFCB00207EF7 /* Debug */,
+				DA97B44825B9BFCB00207EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA97B44925B9BFCB00207EF7 /* Build configuration list for PBXNativeTarget "aws-iot-ios-authentication-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA97B44A25B9BFCB00207EF7 /* Debug */,
+				DA97B44B25B9BFCB00207EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA97B44C25B9BFCB00207EF7 /* Build configuration list for PBXNativeTarget "aws-iot-ios-authentication-demoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA97B44D25B9BFCB00207EF7 /* Debug */,
+				DA97B44E25B9BFCB00207EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA97B44F25B9BFCB00207EF7 /* Build configuration list for PBXNativeTarget "aws-iot-ios-authentication-demoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA97B45025B9BFCB00207EF7 /* Debug */,
+				DA97B45125B9BFCB00207EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA97B41C25B9BFC700207EF7 /* Project object */;
+}
