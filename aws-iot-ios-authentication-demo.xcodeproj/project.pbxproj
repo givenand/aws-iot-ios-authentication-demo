@@ -109,6 +109,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DA434E6925CC3B6000717A9E /* assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
 		DA97B41B25B9BFC700207EF7 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +141,7 @@
 		DA97B42625B9BFC800207EF7 /* aws-iot-ios-authentication-demo */ = {
 			isa = PBXGroup;
 			children = (
+				DA434E6925CC3B6000717A9E /* assets */,
 				DA695E0625CAEAC1009B03B0 /* private.pem */,
 				DACEF5F925C1F03100541044 /* awsiot-identity.p12 */,
 				DA97B42725B9BFC800207EF7 /* cms_mobility_demoApp.swift */,
