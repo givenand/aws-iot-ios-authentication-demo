@@ -10,7 +10,7 @@
 		4BA238E361308FA3CC74B7D0 /* Pods_aws_iot_ios_authentication_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D583BB023619FAD1B545B37D /* Pods_aws_iot_ios_authentication_demo.framework */; };
 		BD09A40F4D14E906EB7FB08F /* Pods_aws_iot_ios_authentication_demo_aws_iot_ios_authentication_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BBAC839DC56ED4A925CCC3 /* Pods_aws_iot_ios_authentication_demo_aws_iot_ios_authentication_demoUITests.framework */; };
 		DA695E0825CAEAC1009B03B0 /* private.pem in Resources */ = {isa = PBXBuildFile; fileRef = DA695E0625CAEAC1009B03B0 /* private.pem */; };
-		DA97B42825B9BFC800207EF7 /* cms_mobility_demoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA97B42725B9BFC800207EF7 /* cms_mobility_demoApp.swift */; };
+		DA97B42825B9BFC800207EF7 /* aws-iot-ios-authentication-demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA97B42725B9BFC800207EF7 /* aws-iot-ios-authentication-demo.swift */; };
 		DA97B42A25B9BFC800207EF7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA97B42925B9BFC800207EF7 /* ContentView.swift */; };
 		DA97B42C25B9BFCB00207EF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA97B42B25B9BFCB00207EF7 /* Assets.xcassets */; };
 		DA97B42F25B9BFCB00207EF7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA97B42E25B9BFCB00207EF7 /* Preview Assets.xcassets */; };
@@ -48,7 +48,7 @@
 		D583BB023619FAD1B545B37D /* Pods_aws_iot_ios_authentication_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aws_iot_ios_authentication_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA695E0625CAEAC1009B03B0 /* private.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = private.pem; path = ../../../../Downloads/private.pem; sourceTree = "<group>"; };
 		DA97B42425B9BFC800207EF7 /* aws-iot-ios-authentication-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aws-iot-ios-authentication-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA97B42725B9BFC800207EF7 /* cms_mobility_demoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cms_mobility_demoApp.swift; sourceTree = "<group>"; };
+		DA97B42725B9BFC800207EF7 /* aws-iot-ios-authentication-demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "aws-iot-ios-authentication-demo.swift"; sourceTree = "<group>"; };
 		DA97B42925B9BFC800207EF7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DA97B42B25B9BFCB00207EF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA97B42E25B9BFCB00207EF7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 				DA434E6925CC3B6000717A9E /* assets */,
 				DA695E0625CAEAC1009B03B0 /* private.pem */,
 				DACEF5F925C1F03100541044 /* awsiot-identity.p12 */,
-				DA97B42725B9BFC800207EF7 /* cms_mobility_demoApp.swift */,
+				DA97B42725B9BFC800207EF7 /* aws-iot-ios-authentication-demo.swift */,
 				DA97B42925B9BFC800207EF7 /* ContentView.swift */,
 				DA97B42B25B9BFCB00207EF7 /* Assets.xcassets */,
 				DA97B43025B9BFCB00207EF7 /* Info.plist */,
@@ -433,7 +433,7 @@
 			files = (
 				DACEF5E325BA19A800541044 /* connectionHandler.swift in Sources */,
 				DA97B42A25B9BFC800207EF7 /* ContentView.swift in Sources */,
-				DA97B42825B9BFC800207EF7 /* cms_mobility_demoApp.swift in Sources */,
+				DA97B42825B9BFC800207EF7 /* aws-iot-ios-authentication-demo.swift in Sources */,
 				DACEF5DB25B9F9AC00541044 /* constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,6 +1,6 @@
 //
-//  cms_mobility_demoApp.swift
-//  cms-mobility-demo
+//  aws-iot-ios-authentication-demo.swift
+//  aws-iot-ios-authentication-demo
 //
 //  Created by Givens, Andrew on 1/21/21.
 //
