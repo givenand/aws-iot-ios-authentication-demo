@@ -178,9 +178,47 @@ struct connectView: View {
 }
 
 struct subscribeView: View {
+    @EnvironmentObject var ch: connectionHandler
+    @State private var topic: String = "testTopic"
+
     var body: some View {
         VStack(spacing: 16) {
-            Text("Subscribe")
+            if(ch.subscribeMessages.entry.count != 0) {
+                ScrollViewReader { scrollProxy in
+                ScrollView(.vertical) {
+                    VStack(spacing: 5) {
+                        ForEach(ch.subscribeMessages.entry) { entry in
+                            return Text("   " + entry.ts + " " + entry.body)
+                                .font(.custom("SFMono-Regular", size: 10))
+                                .frame(
+                                    maxWidth: .infinity,
+                                    alignment: .topLeading
+                                    )
+                        }
+                    }
+                    .frame(maxWidth: .infinity)
+                }.onChange(of: ch.msgId) { id in
+                    guard id != 0 else { return }
+                    withAnimation {
+                        scrollProxy.scrollTo(id)
+                        print(id)
+                    }
+                }
+                }
+            }
+            Spacer()
+            HStack() {
+            Text("Subscribe to")
+            TextField("Topic", text: $topic)
+            Button(
+                action: { ch.subscribeToTopic(topic: topic) },
+                    label: { Text("Subscribe") }
+                  )
+                .foregroundColor(.white)
+                .padding(10)
+                .background(Color.orange)
+                .cornerRadius(8)
+            }
         }
     }
 }

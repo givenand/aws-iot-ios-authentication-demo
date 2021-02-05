@@ -14,8 +14,10 @@ class connectionHandler : ObservableObject {
     
     var connectionStatus: String = "Disconnected"
     var messageIdToSetVisible: Int = 0
-    var logOutput = Logs()
-
+    var msgId: Int = 0
+    @Published var logOutput = Logs()
+    @Published var subscribeMessages = Logs()
+    
     @objc var iotDataManager: AWSIoTDataManager!
     @objc var iotManager: AWSIoTManager!
     @objc var iot: AWSIoT!
@@ -32,7 +34,6 @@ class connectionHandler : ObservableObject {
     
     enum connectionType {
         case certBased, credentialsBased, customBased
-        
     }
     
     func appendLogs(text: String) {
@@ -42,8 +43,23 @@ class connectionHandler : ObservableObject {
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let newMessageId = messageIdToSetVisible + 1
         let newLog = Entry(id: newMessageId, body: text, ts: formatter.string(from: now) )
-        self.logOutput.entry.append(newLog)
+        DispatchQueue.main.async {
+            self.logOutput.entry.append(newLog)
+        }
         messageIdToSetVisible = newMessageId
+    }
+    
+    func appendMessages(text: String) {
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let newMessageId = msgId + 1
+        let newLog = Entry(id: newMessageId, body: text, ts: formatter.string(from: now) )
+        DispatchQueue.main.async {
+            self.subscribeMessages.entry.append(newLog)
+        }
+        msgId = newMessageId
     }
     
     func disconnectFromAWSIoT() {
@@ -59,27 +75,57 @@ class connectionHandler : ObservableObject {
     }
     func setupAWSConnection(type: connectionType, completion: @escaping (_ connected: Bool, _ error: String?) -> Void) {
         // Create AWS credentials and configuration
-        let credentials = AWSCognitoCredentialsProvider(regionType:AWS_REGION, identityPoolId: IDENTITY_POOL_ID)
-        let configuration = AWSServiceConfiguration(region:AWS_REGION, credentialsProvider: credentials)
-        self.appendLogs(text: "Connecting to AWS IoT in region -> \(AWS_REGION)")
-        self.appendLogs(text: "Using Cognito Identity Pool Id ->  \(IDENTITY_POOL_ID)")
-        let controlPlaneServiceConfiguration = AWSServiceConfiguration(region:AWS_REGION, credentialsProvider:credentials)
-                
-        //IoT control plane seem to operate on iot.<region>.amazonaws.com
-        //Set the defaultServiceConfiguration so that when we call AWSIoTManager.default(), it will get picked up
-        AWSServiceManager.default().defaultServiceConfiguration = controlPlaneServiceConfiguration
-        iotManager = AWSIoTManager.default()
-        
-        // Initialising AWS IoT And IoT DataManager
-        AWSIoT.register(with: configuration!, forKey: AWS_IOT_MANAGER_KEY)  // Same configuration var as above
-        iot = AWSIoT.default()
-        let iotEndPoint = AWSEndpoint(urlString: IOT_ENDPOINT) // Access from AWS IoT Core --> Settings
-        let iotDataConfiguration = AWSServiceConfiguration(region: AWS_REGION,     // Use AWS typedef .Region
-                                                           endpoint: iotEndPoint,
-                                                           credentialsProvider: credentials)  // credentials is the same var as created above
+        switch type {
+        case .credentialsBased:
+            let credentials = AWSCognitoCredentialsProvider(regionType:AWS_REGION, identityPoolId: IDENTITY_POOL_ID)
+            let configuration = AWSServiceConfiguration(region:AWS_REGION, credentialsProvider: credentials)
+            self.appendLogs(text: "Connecting to AWS IoT in region -> \(AWS_REGION)")
+            self.appendLogs(text: "Using Cognito Identity Pool Id ->  \(IDENTITY_POOL_ID)")
+            let controlPlaneServiceConfiguration = AWSServiceConfiguration(region:AWS_REGION, credentialsProvider:credentials)
+                    
+            //IoT control plane seem to operate on iot.<region>.amazonaws.com
+            //Set the defaultServiceConfiguration so that when we call AWSIoTManager.default(), it will get picked up
+            AWSServiceManager.default().defaultServiceConfiguration = controlPlaneServiceConfiguration
+            iotManager = AWSIoTManager.default()
+            
+            // Initialising AWS IoT And IoT DataManager
+            AWSIoT.register(with: configuration!, forKey: AWS_IOT_MANAGER_KEY)  // Same configuration var as above
+            iot = AWSIoT.default()
+            let iotEndPoint = AWSEndpoint(urlString: IOT_ENDPOINT) // Access from AWS IoT Core --> Settings
+            let iotDataConfiguration = AWSServiceConfiguration(region: AWS_REGION,     // Use AWS typedef .Region
+                                                               endpoint: iotEndPoint,
+                                                               credentialsProvider: credentials)  // credentials is the same var as created above
 
-        AWSIoTDataManager.register(with: iotDataConfiguration!, forKey: AWS_IOT_DATA_MANAGER_KEY)
-        self.iotDataManager = AWSIoTDataManager(forKey: AWS_IOT_DATA_MANAGER_KEY)
+            AWSIoTDataManager.register(with: iotDataConfiguration!, forKey: AWS_IOT_DATA_MANAGER_KEY)
+            self.iotDataManager = AWSIoTDataManager(forKey: AWS_IOT_DATA_MANAGER_KEY)
+        default:
+        // Initialize AWSMobileClient for authorization
+            AWSMobileClient.default().initialize { (userState, error) in
+                guard error == nil else {
+                    print("Failed to initialize AWSMobileClient. Error: \(error!.localizedDescription)")
+                    return
+                }
+                print("AWSMobileClient initialized.")
+            }
+            // Init IOT
+            let iotEndPoint = AWSEndpoint(urlString: IOT_ENDPOINT)
+
+            // Configuration for AWSIoT control plane APIs
+            let iotConfiguration = AWSServiceConfiguration(region: AWS_REGION,
+                                                           credentialsProvider: AWSMobileClient.default())
+            // Configuration for AWSIoT data plane APIs
+            let iotDataConfiguration = AWSServiceConfiguration(region: AWS_REGION,
+                                                               endpoint: iotEndPoint,
+                                                               credentialsProvider: AWSMobileClient.default())
+            AWSServiceManager.default().defaultServiceConfiguration = iotConfiguration
+
+            iotManager = AWSIoTManager.default()
+            iot = AWSIoT.default()
+
+            AWSIoTDataManager.register(with: iotDataConfiguration!, forKey: AWS_IOT_DATA_MANAGER_KEY)
+            self.iotDataManager = AWSIoTDataManager(forKey: AWS_IOT_DATA_MANAGER_KEY)
+        }
+        
         // Access the AWSDataManager instance as follows:
         getAWSClientID(completion: { clientId, error in
             if let clientId = clientId {
@@ -170,7 +216,7 @@ class connectionHandler : ObservableObject {
                                                          statusCallback: mqttEventCallback)
                         }
                     case .customBased:
-                        var sig = self.signToken(tokenValue: AWS_TOKEN_VALUE)
+                        let sig = self.signToken(tokenValue: AWS_TOKEN_VALUE)
                         dataManager.connectUsingWebSocket(withClientId: clientId,
                                                              cleanSession: true,
                                                              customAuthorizerName: AWS_CUSTOM_AUTHORIZER_NAME,
@@ -293,5 +339,19 @@ class connectionHandler : ObservableObject {
         self.iotDataManager.publishString("Hello from iOS",
                                      onTopic:topic,
                                      qoS:.messageDeliveryAttemptedAtMostOnce)
+    }
+    
+    func subscribeToTopic(topic: String) -> Void {
+        self.iotDataManager.subscribe(toTopic: topic, qoS: .messageDeliveryAttemptedAtMostOnce,
+                                      messageCallback: {
+                                        (payload) ->Void in
+                                            let stringValue = NSString(data: payload, encoding: String.Encoding.utf8.rawValue)!
+                                            print("received: \(stringValue)")
+                                            self.appendMessages(text: stringValue as String)
+                                      },
+                                      ackCallback: {
+                                        self.appendMessages(text: "Subscribed to topic.")
+                                        self.appendMessages(text: "Waiting for messages.")
+                                      })
     }
 }

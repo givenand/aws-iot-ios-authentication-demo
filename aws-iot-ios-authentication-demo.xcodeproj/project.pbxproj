@@ -119,6 +119,7 @@
 		DA97B41B25B9BFC700207EF7 = {
 			isa = PBXGroup;
 			children = (
+				DA97B45525B9C4D700207EF7 /* README.md */,
 				DA97B42625B9BFC800207EF7 /* aws-iot-ios-authentication-demo */,
 				DA97B43825B9BFCB00207EF7 /* aws-iot-ios-authentication-demoTests */,
 				DA97B44325B9BFCB00207EF7 /* cms-mobility-demoUITests */,
@@ -149,7 +150,6 @@
 				DA97B42B25B9BFCB00207EF7 /* Assets.xcassets */,
 				DA97B43025B9BFCB00207EF7 /* Info.plist */,
 				DA97B42D25B9BFCB00207EF7 /* Preview Content */,
-				DA97B45525B9C4D700207EF7 /* README.md */,
 				DACEF5DA25B9F9AC00541044 /* constants.swift */,
 				DACEF5E225BA19A800541044 /* connectionHandler.swift */,
 			);

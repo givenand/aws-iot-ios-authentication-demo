@@ -7,9 +7,10 @@
 
 import SwiftUI
 import AWSIoT
+import AWSMobileClient
 
 @main
-struct cms_mobility_demoApp: App {
+struct aws_iot_ios_authentication_demoApp: App {
     var ch = connectionHandler()
     var body: some Scene {
         WindowGroup {

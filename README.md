@@ -90,9 +90,9 @@ pod install --repo-update
 
 ## AWS Certificate-based Mutual Authentication
 
-For some use cases, a customer may currently be using mutual authentication from iOS into an existing application and would like to use that same certificate in the keychain to access IoT Core.  In this example, we will use AWS X.509 certificates, but a customer can bring their own Certificate Authority (CA) and their own Private Key Infrastructure (PKI), but those specific use cases are outside the scope of this example.  In the below, you will connect to IoT core with a certificate that is created in AWS IoT, the simplest way of connecting our backend.
+For some use cases, a customer may currently be using mutual authentication from iOS into an existing application and would like to use that same certificate in the keychain to access IoT Core.  In this example, we will use AWS X.509 certificates, but a customer can bring their own Certificate Authority (CA) and their own Private Key Infrastructure (PKI), but those specific use cases are outside the scope of this example.  In the below, you will connect to IoT core with a certificate that is created in AWS IoT, the simplest way of connecting to the AWS backend.
 
-1. This sample requires a certificate created in AWS IoT, and an IoT Policy associated with that certificate to connect to IoT Core.
+1. This sample requires a certificate created in AWS IoT, and an IoT Policy associated with that certificate to connect to IoT Core.  
 
 2. To begin, in the AWS IoT Console, press the ```Certificates``` link under the ```Secure``` header.  Press the ```Create``` button and select ```One-click certificate creation``` .  This will create a public/private key that you can download on the next screen.  Make sure you click ```Activate``` to activate the certificate!  Download the public and private key to your local file system.
 
