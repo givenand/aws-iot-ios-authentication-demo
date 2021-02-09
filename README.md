@@ -6,9 +6,8 @@ This sample uses Cognito authentication, client certificates and a custom author
 
 ## Requirements
 
-* Xcode 9.2 and later
-* iOS 9 and later
-* Existing CMS implementation in your AWS account
+* Xcode 14.x and later
+* iOS 14 and later
 
 ## Using the demo
 
@@ -18,9 +17,9 @@ This sample uses Cognito authentication, client certificates and a custom author
 
 3. Fill in the following for your project:
 
-* Product Name: Todo
+* Product Name: aws-iot-ios-authentication-demo
 * Interface: SwiftUI
-* Life Cycle: SwiftUI App (only relevant if Xcode 12 is being used)
+* Life Cycle: SwiftUI App 
 * Language: Swift
 * Select the Next button
 
@@ -48,7 +47,7 @@ vim Podfile
 Open Podfile in the file editing tool of your choice, and replace the contents of the file so that your Podfile looks like the following:
 
 ```
-target 'cms-mobility-demo' do
+target 'aws-iot-ios-authentication-demo' do
   Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'AWSIoT'
